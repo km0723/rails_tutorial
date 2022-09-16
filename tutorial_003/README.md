@@ -132,3 +132,18 @@ rm sample_app/.gitignore
 ```
 
 7. git first commit
+
+8. db create
+```
+bundle _2.2.17_ exec rails db:create
+```
+
+9. db migrate
+```
+bundle _2.2.17_ exec rails db:migrate
+```
+
+10. rails server
+```
+bundle _2.2.17_ exec rails s -b '0.0.0.0' -p 4000
+```
