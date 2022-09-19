@@ -13,8 +13,8 @@ tutorial_003/sample_app/pickle-email-*.html
 # Ignore all logfiles and tempfiles.
 tutorial_003/sample_app/log/*
 tutorial_003/sample_app/tmp/*
-!tutorial_003/sample_app/log/.keep
-!tutorial_003/sample_app/tmp/.keep
+tutorial_003/sample_app/log/.keep
+tutorial_003/sample_app/tmp/.keep
 
 # TODO Comment out this rule if you are OK with secrets being uploaded to the repo
 tutorial_003/sample_app/config/initializers/secret_token.rb
@@ -30,6 +30,7 @@ tutorial_003/sample_app/.env
 ## Environment normalization:
 tutorial_003/sample_app/.bundle
 tutorial_003/sample_app/vendor/bundle
+tutorial_003/sample_app/vendor/.keep
 
 # these should all be checked in to normalize the environment:
 # Gemfile.lock, .ruby-version, .ruby-gemset
@@ -63,4 +64,4 @@ tutorial_003/sample_app/.yarn-integrity
 
 # Ignore uploaded files in development
 tutorial_003/sample_app/storage/*
-!tutorial_003/sample_app/storage/.keep
+tutorial_003/sample_app/storage/.keep
