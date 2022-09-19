@@ -1,66 +1,66 @@
 *.rbc
-capybara-*.html
-/db/*.sqlite3
-/db/*.sqlite3-journal
-/db/*.sqlite3-[0-9]*
-/public/system
-/coverage/
-/spec/tmp
-*.orig
-rerun.txt
-pickle-email-*.html
+tutorial_003/sample_app/capybara-*.html
+tutorial_003/sample_app/db/*.sqlite3
+tutorial_003/sample_app/db/*.sqlite3-journal
+tutorial_003/sample_app/db/*.sqlite3-[0-9]*
+tutorial_003/sample_app//public/system
+tutorial_003/sample_app//coverage/
+tutorial_003/sample_app//spec/tmp
+tutorial_003/sample_app/*.orig
+tutorial_003/sample_app/rerun.txt
+tutorial_003/sample_app/pickle-email-*.html
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
-!/log/.keep
-!/tmp/.keep
+tutorial_003/sample_app/log/*
+tutorial_003/sample_app/tmp/*
+!tutorial_003/sample_app/log/.keep
+!tutorial_003/sample_app/tmp/.keep
 
 # TODO Comment out this rule if you are OK with secrets being uploaded to the repo
-config/initializers/secret_token.rb
-config/master.key
+tutorial_003/sample_app/config/initializers/secret_token.rb
+tutorial_003/sample_app/config/master.key
 
 # Only include if you have production secrets in this file, which is no longer a Rails default
 # config/secrets.yml
 
 # dotenv
 # TODO Comment out this rule if environment variables can be committed
-.env
+tutorial_003/sample_app/.env
 
 ## Environment normalization:
-/.bundle
-/vendor/bundle
+tutorial_003/sample_app/.bundle
+tutorial_003/sample_app/vendor/bundle
 
 # these should all be checked in to normalize the environment:
 # Gemfile.lock, .ruby-version, .ruby-gemset
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
-.rvmrc
+tutorial_003/sample_app/.rvmrc
 
 # if using bower-rails ignore default bower_components path bower.json files
-/vendor/assets/bower_components
-*.bowerrc
-bower.json
+tutorial_003/sample_app/vendor/assets/bower_components
+tutorial_003/sample_app/*.bowerrc
+tutorial_003/sample_app/bower.json
 
 # Ignore pow environment settings
-.powenv
+tutorial_003/sample_app/.powenv
 
 # Ignore Byebug command history file.
-.byebug_history
+tutorial_003/sample_app/.byebug_history
 
 # Ignore node_modules
-node_modules/
+tutorial_003/sample_app/node_modules/
 
 # Ignore precompiled javascript packs
-/public/packs
-/public/packs-test
-/public/assets
+tutorial_003/sample_app/public/packs
+tutorial_003/sample_app/public/packs-test
+tutorial_003/sample_app/public/assets
 
 # Ignore yarn files
-/yarn-error.log
-yarn-debug.log*
-.yarn-integrity
+tutorial_003/sample_app/yarn-error.log
+tutorial_003/sample_app/yarn-debug.log*
+tutorial_003/sample_app/.yarn-integrity
 
 # Ignore uploaded files in development
-/storage/*
-!/storage/.keep
+tutorial_003/sample_app/storage/*
+!tutorial_003/sample_app/storage/.keep
