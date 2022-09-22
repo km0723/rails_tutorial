@@ -237,6 +237,8 @@ GEM
       childprocess (>= 0.5, < 3.0)
       rubyzip (~> 1.2, >= 1.2.2)
     shellany (0.0.1)
+    show_me_the_cookies (6.0.0)
+      capybara (>= 2, < 4)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -303,6 +305,7 @@ DEPENDENCIES
   rspec-rails (~> 4.0.0)
   sass-rails (= 5.1.0)
   selenium-webdriver (= 3.142.4)
+  show_me_the_cookies
   spring (= 2.1.0)
   spring-watcher-listen (= 2.0.1)
   turbolinks (= 5.2.0)

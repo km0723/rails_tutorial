@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  let!(:user){ User.new(name:"konosuke matsuura", email:"konosuke.matsuura@gmail.com", 
+                 password: "foobar", password_confirmation: "foobar") } 
   describe "validation" do 
-    let!(:user){ User.new(name:"konosuke matsuura", email:"konosuke.matsuura@gmail.com", 
-                          password: "foobar", password_confirmation: "foobar") } 
     it "valid" do
       expect(user).to be_valid
     end
@@ -77,5 +77,43 @@ RSpec.describe User, type: :model do
       expect(user.errors.messages[:password]).to include "is too short (minimum is 6 characters)"
     end
 
+  end
+
+  describe "remember" do 
+    it "remember_digestが保存されること" do 
+      user.remember
+      expect(user.remember_digest).to_not eq nil
+    end
+  end
+
+  describe "authenticated?" do 
+    it "remenber_token一致" do 
+      user.remember
+      expect(user.authenticated?(user.remember_token)).to be true
+    end
+
+    it "remenber_token不一致" do 
+      user.remember
+      expect(user.authenticated?('')).to be false
+    end
+
+    it "remenber_digestがnil" do 
+      user.update_attribute(:remember_digest, nil)
+      expect(user.authenticated?('')).to be false
+    end
+  end
+
+  describe "forget" do 
+    it "rememner_digestがnil" do 
+      user.update_attribute(:remember_digest, nil)
+      user.forget
+      expect(user.remember_digest).to eq nil
+    end
+
+    it "rememner_digestがnil以外" do 
+      user.remember
+      user.forget
+      expect(user.remember_digest).to eq nil
+    end
   end
 end

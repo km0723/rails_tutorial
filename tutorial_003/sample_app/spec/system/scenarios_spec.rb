@@ -153,6 +153,26 @@ RSpec.describe "シナリオテスト", type: :system do
           expect(page).to_not have_link "Log in"
         end          
       end
+
+      it "check Remember me" do
+        check "Remember me on this computer"
+        click_button 'Log in'
+        expire_cookies
+        visit current_path
+        within "header" do
+          expect(page).to have_content "Account"
+        end          
+      end
+
+      it "uncheck Remember me" do
+        uncheck "Remember me on this computer"
+        click_button 'Log in'
+        expire_cookies
+        visit current_path
+        within "header" do
+          expect(page).to_not have_content "Account"
+        end          
+      end
     end
 
     context "異常系" do
