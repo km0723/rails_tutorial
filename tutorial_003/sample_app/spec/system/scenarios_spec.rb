@@ -129,19 +129,13 @@ RSpec.describe "シナリオテスト", type: :system do
 
   describe "ログイン" do 
     context "正常系" do
-      before do
-        visit login_path
-        fill_in 'Email', with: michael.email
-        fill_in 'Password', with: 'mypassword'
-      end
-
       it "ログインでき/users/*へリダイレクトされること" do
-        click_button 'Log in'
+        login
         expect(current_path).to include '/users/'
       end
 
       it "ログイン後ヘッダ" do
-        click_button 'Log in'
+        login
         within "header" do
           expect(page).to have_link "Home"
           expect(page).to have_link "Help"
@@ -155,8 +149,7 @@ RSpec.describe "シナリオテスト", type: :system do
       end
 
       it "check Remember me" do
-        check "Remember me on this computer"
-        click_button 'Log in'
+        login
         expire_cookies
         visit current_path
         within "header" do
@@ -165,8 +158,7 @@ RSpec.describe "シナリオテスト", type: :system do
       end
 
       it "uncheck Remember me" do
-        uncheck "Remember me on this computer"
-        click_button 'Log in'
+        login(remember: false)
         expire_cookies
         visit current_path
         within "header" do
@@ -193,10 +185,7 @@ RSpec.describe "シナリオテスト", type: :system do
   describe "ログアウト" do 
     context "正常系" do
       before do
-        visit login_path
-        fill_in 'Email', with: michael.email
-        fill_in 'Password', with: 'mypassword'
-        click_button 'Log in'
+        login
       end
 
       it "ログアウトでき/へリダイレクトされること" do
