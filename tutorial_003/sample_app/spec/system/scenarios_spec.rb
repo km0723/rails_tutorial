@@ -179,6 +179,23 @@ RSpec.describe "シナリオテスト", type: :system do
         expect(page).to_not have_content "Invalid email/password combination"
 
       end
+
+      it "ログイン不可 remember_token 不一致" do
+        login
+
+        # session削除
+        expire_cookies
+
+        # remember_token 再作成
+        delete_cookie(:remember_token)
+        create_cookie(:remember_token, "hogefuga")
+
+        # remember_tokenが不一致となりログアウト状態になるかチェック
+        visit current_path
+        within "header" do
+          expect(page).to_not have_content "Account"
+        end
+      end
     end
   end
 
