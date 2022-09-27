@@ -147,3 +147,9 @@ bundle _2.2.17_ exec rails db:migrate
 ```
 bundle _2.2.17_ exec rails s -b '0.0.0.0' -p 4000
 ```
+
+memmo.
+```
+Docker spec debug
+bundle exec rdebug-ide --host 0.0.0.0 --port 1234 --dispatcher-port 26162 -- vendor/bundle/ruby/2.6.0/bin/rspec spec/xxx/xxx.rb
+```
