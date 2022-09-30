@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "View Test", type: :system do
+RSpec.xdescribe "View Test", type: :system do
   include ApplicationHelper
 
   before do

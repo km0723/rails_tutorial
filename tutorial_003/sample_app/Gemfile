@@ -12,11 +12,14 @@ gem 'webpacker',  '4.0.7'
 gem 'turbolinks', '5.2.0'
 gem 'jbuilder',   '2.9.1'
 gem 'bootsnap',   '1.10.3', require: false
+gem 'will_paginate',           '3.3.1'
+gem 'bootstrap-will_paginate', '1.0.0'
 
 group :development, :test do
   # Use mysql as the database for Active Record
   gem 'mysql2', '~> 0.5'
   gem 'byebug',  '11.0.1', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'faker'
 end
 
 group :development do
@@ -39,7 +42,6 @@ group :test do
   # rspec
   gem 'rspec-rails', '~> 4.0.0'
   gem 'factory_bot_rails'
-  gem 'faker'
   gem 'guard-rspec'
   gem 'show_me_the_cookies'
 end
