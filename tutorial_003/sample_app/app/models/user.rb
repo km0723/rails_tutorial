@@ -42,4 +42,16 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
+  scope :search, -> (search_params) do
+    # パラメータを指定して検索を実行する
+    name_like(search_params[:name])
+      .email_like(search_params[:email])
+  end
+
+  # nameが存在する場合、nameをlike検索する
+  scope :name_like, -> (name) { where('name LIKE ?', "%#{name}%") if name.present? }
+
+  # emailが存在する場合、nameをlike検索する
+  scope :email_like, -> (email) { where('email LIKE ?', "%#{email}%") if email.present? }
+
 end

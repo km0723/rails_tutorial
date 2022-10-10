@@ -23,7 +23,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.paginate(page: params[:page])
+    @search_params = user_search_params
+    @users = User.search(@search_params).paginate(page: params[:page])
   end
 
   def edit
@@ -51,6 +52,10 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
+    end
+
+    def user_search_params
+      params.fetch(:search, {}).permit(:name, :email)
     end
 
     # beforeアクション
